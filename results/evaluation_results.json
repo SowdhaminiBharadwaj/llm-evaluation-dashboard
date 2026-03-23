@@ -1,0 +1,297 @@
+{
+  "project": "LLM Evaluation & Benchmarking Dashboard",
+  "models_compared": [
+    "LLaMA-3.1-8B",
+    "LLaMA-3.3-70B"
+  ],
+  "total_test_cases": 15,
+  "categories": [
+    "Factual Knowledge",
+    "Reasoning",
+    "Summarization",
+    "Coding",
+    "Hallucination Check"
+  ],
+  "overall_results": {
+    "LLaMA-3.1-8B": {
+      "accuracy": 53.3,
+      "avg_latency": 0.3
+    },
+    "LLaMA-3.3-70B": {
+      "accuracy": 66.7,
+      "avg_latency": 0.52
+    }
+  },
+  "detailed_results": [
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Factual Knowledge",
+      "question": "What is the capital of Australia?",
+      "answer": "The capital of Australia is Canberra.",
+      "expected_keyword": "Canberra",
+      "correct": true,
+      "latency_sec": 0.29
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Factual Knowledge",
+      "question": "What is the chemical symbol for gold?",
+      "answer": "The chemical symbol for gold is Au. It comes from the Latin word for gold, 'aurum'.",
+      "expected_keyword": "Au",
+      "correct": true,
+      "latency_sec": 0.1
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Factual Knowledge",
+      "question": "How many planets are in our solar system?",
+      "answer": "There are 8 planets in our solar system. The order of the planets, starting from the Sun and moving outward, is:\n\n1. Mercury\n2. Venus\n3. Earth\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\nNote that Pluto was previously considered a planet but was reclassified as a dwarf planet in 2006 by the International Astronomical Union (IAU).",
+      "expected_keyword": "8",
+      "correct": true,
+      "latency_sec": 0.33
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Reasoning",
+      "question": "If a train travels 120 miles in 2 hours, what is its average speed?",
+      "answer": "To find the average speed of the train, you need to divide the total distance traveled by the total time taken.\n\nDistance = 120 miles\nTime = 2 hours\n\nAverage Speed = Distance / Time\n= 120 miles / 2 hours\n= 60 miles per hour\n\nSo, the average speed of the train is 60 miles per hour.",
+      "expected_keyword": "60 mph",
+      "correct": false,
+      "latency_sec": 0.22
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Reasoning",
+      "question": "A bat and ball cost $1.10. The bat costs $1 more than the ball. How much does the ball cost?",
+      "answer": "To find the cost of the ball, let's use algebra. \n\nLet the cost of the ball be x.\n\nSince the bat costs $1 more than the ball, the cost of the bat is x + 1.\n\nThe total cost of the bat and ball is $1.10, so we can set up the equation:\n\nx + (x + 1) = 1.10\n\nCombine like terms:\n\n2x + 1 = 1.10\n\nSubtract 1 from both sides:\n\n2x = 0.10\n\nDivide both sides by 2:\n\nx = 0.05\n\nSo, the ball costs $0.05.",
+      "expected_keyword": "5 cents",
+      "correct": false,
+      "latency_sec": 0.21
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Reasoning",
+      "question": "If all roses are flowers and some flowers fade quickly, can we conclude all roses fade quickly?",
+      "answer": "No, we cannot conclude that all roses fade quickly. \n\nThe given statement is: \n1. All roses are flowers.\n2. Some flowers fade quickly.\n\nFrom these statements, we can infer that some roses (since they are flowers) fade quickly, but we cannot conclude that all roses fade quickly. The statement only tells us that some flowers (which include roses) fade quickly, not that all roses do.",
+      "expected_keyword": "No",
+      "correct": true,
+      "latency_sec": 0.32
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Summarization",
+      "question": "Summarize the water cycle in 2 sentences.",
+      "answer": "The water cycle is the continuous process by which water is circulated between the Earth's oceans, atmosphere, and land, involving evaporation, condensation, and precipitation. It consists of three main stages: evaporation (water is heated and turns into vapor), condensation (water vapor cools and forms clouds), and precipitation (water falls back to the Earth as rain, snow, or hail).",
+      "expected_keyword": "evaporation, condensation, precipitation",
+      "correct": false,
+      "latency_sec": 0.22
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Summarization",
+      "question": "Summarize the causes of World War 1 in 2 sentences.",
+      "answer": "The causes of World War I can be attributed to a complex interplay of factors, including the complex system of alliances between European powers, the rise of nationalism and militarism, and the assassination of Archduke Franz Ferdinand of Austria-Hungary, which sparked a chain reaction of events leading to the outbreak of war. The underlying tensions and rivalries between major powers, such as Germany's desire for expansion, Britain's fear of German naval power, and France's desire for revenge against Germany, also contributed to the outbreak of the war.",
+      "expected_keyword": "assassination, alliances, nationalism",
+      "correct": false,
+      "latency_sec": 0.22
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Summarization",
+      "question": "Summarize how photosynthesis works in 2 sentences.",
+      "answer": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose, using carbon dioxide and water as reactants and releasing oxygen as a byproduct. This process involves the absorption of light energy by pigments such as chlorophyll, which is then used to drive a series of chemical reactions that convert carbon dioxide and water into glucose and oxygen.",
+      "expected_keyword": "sunlight, carbon dioxide, oxygen",
+      "correct": false,
+      "latency_sec": 0.21
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Coding",
+      "question": "Write a Python function to check if a number is even.",
+      "answer": "## Checking if a Number is Even in Python\n\nYou can use the modulus operator (`%`) to check if a number is even. If the remainder of the division of the number by 2 is 0, then the number is even.\n\n### Code\n\n```python\ndef is_even(n):\n    \"\"\"\n    Checks if a number is even.\n\n    Args:\n        n (int): The number to check.\n\n    Returns:\n        bool: True if the number is even, False otherwise.\n    \"\"\"\n    return n % 2 == 0\n```\n\n### Example Use Cases\n\n```python\nprint(is_even(10))  # Output: True\nprint(is_even(11))  # Output: False\nprint(is_even(0))   # Output: True\n```\n\n### Alternative Implementation\n\nYou can also use the bitwise AND operator (`&`) to check if a number is even. If the number is even, the result of `n & 1` will be 0.\n\n```python\ndef is_even(n):\n    \"\"\"\n    Checks if a number is even.\n\n    Args:\n        n (int): The number to check.\n\n    Returns:\n        bool: True if the number is even, False otherwise.\n    \"\"\"\n    return (n & 1) == 0\n```\n\nThis implementation is slightly faster than the modulus operator implementation because it avoids the overhead of a function call. However, the difference is usually negligible unless you're performing this operation millions of times.",
+      "expected_keyword": "def",
+      "correct": true,
+      "latency_sec": 0.42
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Coding",
+      "question": "Write a Python one-liner to reverse a string.",
+      "answer": "```python\ns = \"hello\"; reversed_s = s[::-1]; print(reversed_s)\n```\n\nThis one-liner uses Python's slice notation to create a reversed copy of the string `s`. The `[::-1]` slice means \"start at the end of the string and end at position 0, move with the step -1\", effectively reversing the string.",
+      "expected_keyword": "[::-1]",
+      "correct": true,
+      "latency_sec": 0.27
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Coding",
+      "question": "Write a Python function to calculate factorial recursively.",
+      "answer": "**Recursive Factorial Function in Python**\n=====================================================\n\nHere's a simple recursive function to calculate the factorial of a given number in Python:\n\n```python\ndef factorial(n):\n    \"\"\"\n    Calculate the factorial of a given number recursively.\n\n    Args:\n        n (int): The number to calculate the factorial for.\n\n    Returns:\n        int: The factorial of the given number.\n\n    Raises:\n        ValueError: If the input number is negative.\n    \"\"\"\n    if not isinstance(n, int):\n        raise TypeError(\"Input must be an integer.\")\n    if n < 0:\n        raise ValueError(\"Input must be a non-negative integer.\")\n    elif n == 0 or n == 1:\n        # Base case: factorial of 0 or 1 is 1\n        return 1\n    else:\n        # Recursive case: n! = n * (n-1)!\n        return n * factorial(n-1)\n```\n\n**Example Use Cases**\n--------------------\n\n```python\nprint(factorial(5))  # Output: 120\nprint(factorial(0))  # Output: 1\nprint(factorial(1))  # Output: 1\n\n# Test error handling\ntry:\n    print(factorial(-1))\nexcept ValueError as e:\n    print(e)  # Output: Input must be a non-negative integer.\n\ntry:\n    print(factorial(3.5))\nexcept TypeError as e:\n    print(e)  # Output: Input must be an integer.\n```\n\nThis function uses recursion to calculate the factorial of a given number. The base case is when `n` is 0 or 1, in which case the function returns 1. For other values of `n`, the function calls itself with `n-1` as the argument and multiplies the result by `n`. The function also includes error handling to raise a `ValueError` if the input number is negative and a `TypeError` if the input is not an integer.",
+      "expected_keyword": "def factorial",
+      "correct": true,
+      "latency_sec": 0.67
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Hallucination Check",
+      "question": "Who won the 2025 FIFA World Cup?",
+      "answer": "I'm not aware of any information about the 2025 FIFA World Cup as my knowledge cutoff is December 2023. I do not have information about future events.",
+      "expected_keyword": "don't know",
+      "correct": true,
+      "latency_sec": 0.21
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Hallucination Check",
+      "question": "What is the GDP of Mars?",
+      "answer": "There is no GDP (Gross Domestic Product) for Mars. Mars is a planet in our solar system and does not have a functioning economy or any human settlements. While there have been several robotic missions to Mars, including rovers like NASA's Curiosity and Perseverance, no human has established a permanent settlement or economy on the planet.\n\nTherefore, it is not possible to calculate a GDP for Mars.",
+      "expected_keyword": "don't know",
+      "correct": false,
+      "latency_sec": 0.21
+    },
+    {
+      "model": "LLaMA-3.1-8B",
+      "category": "Hallucination Check",
+      "question": "What did Einstein say in his 1952 interview on quantum computing?",
+      "answer": "I couldn't find any information about an interview with Einstein in 1952 specifically about quantum computing. \n\nHowever, I can tell you that quantum computing as a concept did not exist in the 1950s. The term \"quantum computing\" was first coined in the 1980s by physicist David Deutsch. \n\nAlbert Einstein passed away in 1955. While Einstein did discuss the principles of quantum mechanics and its implications, I couldn't find any information about a specific interview with him discussing quantum computing.\n\nIf you're interested in Einstein's views on quantum mechanics, I can provide some general information. Einstein was a prominent critic of the Copenhagen interpretation of quantum mechanics, which he felt was incomplete and unsatisfactory. He proposed the EPR paradox in 1935, which challenged the principles of quantum mechanics. However, this was long before the concept of quantum computing emerged.",
+      "expected_keyword": "don't know",
+      "correct": false,
+      "latency_sec": 0.53
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Factual Knowledge",
+      "question": "What is the capital of Australia?",
+      "answer": "The capital of Australia is Canberra.",
+      "expected_keyword": "Canberra",
+      "correct": true,
+      "latency_sec": 0.31
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Factual Knowledge",
+      "question": "What is the chemical symbol for gold?",
+      "answer": "The chemical symbol for gold is Au. This comes from the Latin word for gold, \"aurum.\"",
+      "expected_keyword": "Au",
+      "correct": true,
+      "latency_sec": 0.32
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Factual Knowledge",
+      "question": "How many planets are in our solar system?",
+      "answer": "There are 8 planets in our solar system. They are:\n\n1. Mercury\n2. Mars\n3. Venus\n4. Earth\n5. Neptune\n6. Uranus\n7. Saturn\n8. Jupiter\n\nNote: Pluto was previously considered a planet, but in 2006, it was reclassified as a dwarf planet by the International Astronomical Union (IAU).",
+      "expected_keyword": "8",
+      "correct": true,
+      "latency_sec": 0.21
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Reasoning",
+      "question": "If a train travels 120 miles in 2 hours, what is its average speed?",
+      "answer": "To find the average speed, you need to divide the total distance traveled by the total time taken.\n\nDistance = 120 miles\nTime = 2 hours\n\nAverage Speed = Distance / Time\n= 120 miles / 2 hours\n= 60 miles per hour\n\nSo, the average speed of the train is 60 miles per hour.",
+      "expected_keyword": "60 mph",
+      "correct": false,
+      "latency_sec": 0.42
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Reasoning",
+      "question": "A bat and ball cost $1.10. The bat costs $1 more than the ball. How much does the ball cost?",
+      "answer": "To solve this problem, let's use algebra. \n\nLet the cost of the ball be x.\n\nSince the bat costs $1 more than the ball, the cost of the bat is x + 1.\n\nThe total cost of the bat and the ball is $1.10, so we can set up the equation:\n\nx + (x + 1) = 1.10\n\nCombine like terms:\n\n2x + 1 = 1.10\n\nSubtract 1 from both sides:\n\n2x = 0.10\n\nDivide both sides by 2:\n\nx = 0.05\n\nSo, the ball costs $0.05, or 5 cents.",
+      "expected_keyword": "5 cents",
+      "correct": true,
+      "latency_sec": 0.52
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Reasoning",
+      "question": "If all roses are flowers and some flowers fade quickly, can we conclude all roses fade quickly?",
+      "answer": "No, we cannot conclude that all roses fade quickly. The statement \"some flowers fade quickly\" only tells us that there is a subset of flowers that fade quickly, but it does not specify which types of flowers are included in that subset.\n\nJust because roses are a type of flower, it does not mean that they are necessarily part of the subset of flowers that fade quickly. There may be other types of flowers that fade quickly, but roses might not be among them.\n\nTo conclude that all roses fade quickly, we would need additional information that specifically states that roses are part of the subset of flowers that fade quickly. Without that information, we can only say that some flowers fade quickly, and roses may or may not be among them.",
+      "expected_keyword": "No",
+      "correct": true,
+      "latency_sec": 0.63
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Summarization",
+      "question": "Summarize the water cycle in 2 sentences.",
+      "answer": "The water cycle, also known as the hydrologic cycle, is the continuous process by which water is circulated between the Earth and the atmosphere, involving the movement of water in three phases: liquid, solid (ice), and gas (water vapor). This cycle includes evaporation, condensation, precipitation, and runoff, as water evaporates from the oceans, lakes, and rivers, condenses into clouds, falls to the ground as precipitation, and then flows back into bodies of water, repeating the cycle.",
+      "expected_keyword": "evaporation, condensation, precipitation",
+      "correct": true,
+      "latency_sec": 0.52
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Summarization",
+      "question": "Summarize the causes of World War 1 in 2 sentences.",
+      "answer": "The causes of World War I were complex and multifaceted, but they can be attributed to a combination of factors including the rise of nationalism, imperialism, and militarism among European powers, as well as the system of alliances between countries such as the Triple Entente and the Triple Alliance. The immediate trigger for the war was the assassination of Archduke Franz Ferdinand of Austria-Hungary by a Serbian nationalist in 1914, which set off a chain reaction of diplomatic crises and military mobilizations that eventually led to the outbreak of war.",
+      "expected_keyword": "assassination, alliances, nationalism",
+      "correct": false,
+      "latency_sec": 0.42
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Summarization",
+      "question": "Summarize how photosynthesis works in 2 sentences.",
+      "answer": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose, a type of sugar that serves as a vital source of energy and building block for growth. This process occurs in specialized organelles called chloroplasts, where light energy is absorbed by pigments such as chlorophyll and used to power a series of chemical reactions that convert carbon dioxide and water into glucose and oxygen.",
+      "expected_keyword": "sunlight, carbon dioxide, oxygen",
+      "correct": false,
+      "latency_sec": 0.42
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Coding",
+      "question": "Write a Python function to check if a number is even.",
+      "answer": "**Even Number Checker Function**\n================================\n\n### Function Description\n\nThis function checks if a given number is even.\n\n### Code\n\n```python\ndef is_even(num: int) -> bool:\n    \"\"\"\n    Checks if a number is even.\n\n    Args:\n        num (int): The number to check.\n\n    Returns:\n        bool: True if the number is even, False otherwise.\n    \"\"\"\n    return num % 2 == 0\n\n# Example usage:\nif __name__ == \"__main__\":\n    numbers = [1, 2, 3, 4, 5]\n    for num in numbers:\n        print(f\"Is {num} even? {is_even(num)}\")\n```\n\n### Explanation\n\n*   The function `is_even` takes an integer `num` as input.\n*   It uses the modulus operator (`%`) to find the remainder of `num` divided by 2.\n*   If the remainder is 0, the number is even, and the function returns `True`. Otherwise, it returns `False`.\n*   The example usage demonstrates how to use the `is_even` function with a list of numbers.",
+      "expected_keyword": "def",
+      "correct": true,
+      "latency_sec": 0.53
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Coding",
+      "question": "Write a Python one-liner to reverse a string.",
+      "answer": "```python\nreversed_string = lambda s: s[::-1]\n```",
+      "expected_keyword": "[::-1]",
+      "correct": true,
+      "latency_sec": 0.32
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Coding",
+      "question": "Write a Python function to calculate factorial recursively.",
+      "answer": "### Recursive Factorial Function in Python\n#### Overview\nThis function calculates the factorial of a given integer using recursion.\n\n#### Code\n```python\ndef factorial(n: int) -> int:\n    \"\"\"\n    Calculate the factorial of a given integer using recursion.\n\n    Args:\n        n (int): The input number.\n\n    Returns:\n        int: The factorial of the input number.\n\n    Raises:\n        ValueError: If the input number is negative.\n    \"\"\"\n    # Base case: factorial of 0 or 1 is 1\n    if n == 0 or n == 1:\n        return 1\n    \n    # Check for negative input\n    if n < 0:\n        raise ValueError(\"Factorial is not defined for negative numbers\")\n    \n    # Recursive case: n! = n * (n-1)!\n    return n * factorial(n-1)\n\n\n# Example usage:\nif __name__ == \"__main__\":\n    num = 5\n    try:\n        result = factorial(num)\n        print(f\"The factorial of {num} is {result}\")\n    except ValueError as e:\n        print(e)\n```\n\n#### Explanation\n*   The function `factorial(n)` takes an integer `n` as input and returns its factorial.\n*   The base case for the recursion is when `n` is 0 or 1, in which case the function returns 1 (since the factorial of 0 and 1 is 1).\n*   For negative input, the function raises a `ValueError` because the factorial is not defined for negative numbers.\n*   For positive integers greater than 1, the function calls itself with the argument `n-1` and multiplies the result by `n`. This is the recursive case.\n*   The example usage demonstrates how to call the `factorial` function with a positive integer and handle any potential errors.",
+      "expected_keyword": "def factorial",
+      "correct": true,
+      "latency_sec": 1.24
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Hallucination Check",
+      "question": "Who won the 2025 FIFA World Cup?",
+      "answer": "I'm not aware of any information about the 2025 FIFA World Cup, as my knowledge cutoff is 2023. The FIFA World Cup is held every four years, and the most recent one I have information on is the 2022 FIFA World Cup in Qatar. If you're looking for information on future FIFA World Cups, I recommend checking the official FIFA website or other reliable sources for updates.",
+      "expected_keyword": "don't know",
+      "correct": true,
+      "latency_sec": 0.51
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Hallucination Check",
+      "question": "What is the GDP of Mars?",
+      "answer": "Since Mars is a planet and not a country, it does not have a Gross Domestic Product (GDP). GDP is a measure of the total value of goods and services produced within a country's borders over a specific period of time, usually a year. As Mars is not inhabited by humans and does not have an economy, it does not have a GDP.\n\nHowever, there have been several robotic missions to Mars, including rovers like NASA's Curiosity and Perseverance, as well as landers and orbiters from various countries and organizations. These missions have helped us learn more about the Martian geology, climate, and potential habitability, but they do not contribute to a GDP.\n\nIf humans were to establish a settlement on Mars in the future, it's possible that a Martian economy could develop, and a GDP could be calculated. But for now, Mars remains a planet without a GDP.",
+      "expected_keyword": "don't know",
+      "correct": false,
+      "latency_sec": 0.62
+    },
+    {
+      "model": "LLaMA-3.3-70B",
+      "category": "Hallucination Check",
+      "question": "What did Einstein say in his 1952 interview on quantum computing?",
+      "answer": "I couldn't find any information about Albert Einstein giving an interview specifically about quantum computing in 1952. \n\nEinstein passed away on April 18, 1955, so it's possible that he might have discussed some related topics, but the term \"quantum computing\" as we understand it today didn't exist during his lifetime. The concept of quantum computing as a field of study began to take shape in the 1980s.\n\nHowever, Einstein did have discussions and debates with other prominent physicists, such as Niels Bohr, about the principles of quantum mechanics. These debates, known as the Bohr-Einstein debates, took place in the 1920s and 1930s and focused on the interpretation of quantum mechanics, rather than quantum computing specifically.\n\nIf you're interested in learning more about Einstein's thoughts on quantum mechanics or his discussions with other physicists, I'd be happy to help you find more information.",
+      "expected_keyword": "don't know",
+      "correct": false,
+      "latency_sec": 0.73
+    }
+  ]
+}

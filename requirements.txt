@@ -1,0 +1,7 @@
+langchain
+langchain-groq
+langchain-core
+pandas
+numpy
+matplotlib
+python-dotenv
